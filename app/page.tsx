@@ -293,12 +293,11 @@ export default function Page() {
 
                 <p className="mt-5 max-w-xl text-base leading-[1.9] text-[#999999]">
                   I enjoy exploring the intersection of design, technology and
-                  creativity. I believe great design isn&apos;t just about how things
-                  look, but also about how they feel and work.
+                  creativity.
                 </p>
 
                 <p className="mt-5 max-w-xl text-base leading-[1.9] text-[#999999]">
-                  Outside of design, I&apos;m always curious, experimenting with new
+                  Outside of design, I&apos;m always seeking new experiences, experimenting with new
                   ideas and finding inspiration in the world around me.
                 </p>
               </div>
