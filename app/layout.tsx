@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import TargetCursor from '@/components/TargetCursor'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -30,6 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <TargetCursor
+          targetSelector="a[href], button:not(:disabled), [role='button']:not([aria-disabled='true']), .cursor-target"
+          spinDuration={2}
+          hideDefaultCursor
+          parallaxOn
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

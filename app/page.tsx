@@ -3,18 +3,24 @@
 import Link from 'next/link'
 import { ScrambleLink } from '@/components/scramble-link'
 import TechText from '@/components/TechText'
+import SideQuestCard from '@/components/SideQuestCard'
 import SideQuestModal from '@/components/SideQuestModal'
-import CursorGuides from '@/components/CursorGuides'
 import { projects, sideQuests, type SideQuest } from '@/data/portfolio'
 import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
+
+interface ActiveSideQuest {
+  quest: SideQuest
+  originRect: DOMRect
+  triggerEl: HTMLButtonElement
+}
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [navScrolled, setNavScrolled] = useState(false)
   const [activeProject, setActiveProject] = useState(0)
   const [showIntro, setShowIntro] = useState(true)
-  const [selectedSideQuest, setSelectedSideQuest] = useState<SideQuest | null>(null)
+  const [selectedSideQuest, setSelectedSideQuest] = useState<ActiveSideQuest | null>(null)
   const projectRefs = useRef<(HTMLElement | null)[]>([])
 
   useEffect(() => {
@@ -248,26 +254,13 @@ export default function Page() {
             <div className="mx-auto grid w-full max-w-[960px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {sideQuests.map((quest) => (
                 <article key={quest.id} className="group">
-                  <button
-                    type="button"
-                    data-side-quest-card
-                    data-side-quest-id={quest.id}
-                    onClick={() => setSelectedSideQuest(quest)}
-                    aria-label={`Open ${quest.title} pop-up`}
-                    className="flex aspect-square w-full cursor-pointer items-center justify-center overflow-hidden border border-white/10 bg-[#181818] transition-colors duration-300 group-hover:border-[#00a8ff]/50 focus-visible:border-[#00a8ff] focus-visible:outline-none"
-                  >
-                    {quest.image ? (
-                      <img
-                        src={quest.image}
-                        alt={quest.alt}
-                        className="h-full w-full object-contain"
-                      />
-                    ) : (
-                      <span className="text-xs tracking-[0.2em] text-[#555555]">
-                        {quest.placeholderLabel}
-                      </span>
-                    )}
-                  </button>
+                  <SideQuestCard
+                    quest={quest}
+                    isHidden={selectedSideQuest?.quest.id === quest.id}
+                    onSelect={(selected, originRect, triggerEl) =>
+                      setSelectedSideQuest({ quest: selected, originRect, triggerEl })
+                    }
+                  />
                 </article>
               ))}
             </div>
@@ -367,11 +360,15 @@ export default function Page() {
       </main>
 
       <SideQuestModal
-        quest={selectedSideQuest}
-        onClose={() => setSelectedSideQuest(null)}
+        quest={selectedSideQuest?.quest ?? null}
+        originRect={selectedSideQuest?.originRect ?? null}
+        triggerEl={selectedSideQuest?.triggerEl ?? null}
+        onClose={() => {
+          const trigger = selectedSideQuest?.triggerEl
+          setSelectedSideQuest(null)
+          trigger?.focus({ preventScroll: true })
+        }}
       />
-
-      <CursorGuides modalOpen={Boolean(selectedSideQuest)} />
     </>
   )
 }
