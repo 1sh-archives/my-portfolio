@@ -302,7 +302,7 @@ export default function Page() {
         <section id="soras-playground" className="border-b border-white/10 bg-[#070707]">
           <div className="mx-auto max-w-[1440px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <div className="mb-14 text-center">
-              <h2 className="font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-6xl">
+              <h2 className="sora-playground-heading text-5xl text-[#d6d6d6] sm:text-6xl">
                 Sora&apos;s Playground
               </h2>
             </div>
@@ -317,11 +317,7 @@ export default function Page() {
           <div className="mx-auto max-w-[1440px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
               <div>
-                <span className="text-xs uppercase tracking-[0.25em] text-[#8FADFF]">
-                  A little about me
-                </span>
-
-                <h2 className="mt-5 font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-6xl">
+                <h2 className="font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-6xl">
                   About Me.
                 </h2>
 

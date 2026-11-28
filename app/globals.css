@@ -50,6 +50,12 @@ h6 {
   font-style: italic;
 }
 
+.sora-playground-heading {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 300;
+}
+
 .target-cursor {
   position: fixed;
   inset: 0;
