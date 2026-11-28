@@ -21,10 +21,10 @@
 
 :root {
   color-scheme: dark;
-  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-display: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-playfair-display);
   --font-serif: Georgia, 'Times New Roman', serif;
-  --font-mono: 'SFMono-Regular', Consolas, monospace;
+  --font-mono: var(--font-dm-sans);
   --background: oklch(0.035 0 0);
   --foreground: oklch(0.93 0 0);
   --primary: oklch(0.93 0 0);
@@ -38,7 +38,17 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scrollbar-width: none; }
 html::-webkit-scrollbar { display: none; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans), Arial, sans-serif; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans), Arial, sans-serif; font-weight: 300; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-style: italic;
+}
 
 .target-cursor {
   position: fixed;
@@ -125,12 +135,7 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
   .nav-shell-scrolled { display: none; }
 }
 
-.hero-greeting {
-  font-family: 'Playfair Display', sans-serif;
-}
-
 .hero-description {
-  font-family: inherit;
   font-kerning: none;
 }
 
@@ -279,17 +284,19 @@ body::after {
 
 body::before {
   z-index: 50;
-  width: 3px;
+  width: 1.75px;
   height: 100%;
   background: #171717;
 }
 
 body::after {
   z-index: 51;
-  width: 3px;
+  width: 1.75px;
   height: 100%;
-  background: linear-gradient(180deg, var(--electric-blue) 0%, var(--electric-blue) 65%, var(--signal-orange) 100%);
-  clip-path: inset(0 0 calc(100% - var(--scroll-progress, 0%)) 0);
+  background: linear-gradient(180deg, #14285f 0%, var(--electric-blue) 65%, #a8c0ff 100%);
+  background-size: 100% var(--scroll-progress, 0%);
+  background-repeat: no-repeat;
+  clip-path: inset(0 0 calc(100% - var(--scroll-progress, 0%)) 0 round 0 0 0.875px 0.875px);
   transition: clip-path 120ms linear;
 }
 

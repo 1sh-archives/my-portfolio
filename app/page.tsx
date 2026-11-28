@@ -146,18 +146,18 @@ export default function Page() {
           </div>
 
           <div className={`${preloaderRevealing ? 'landing-preloader-reveal' : ''} relative z-10`}>
-            <p className="mb-1 font-display text-xl text-[#f0f0f0] sm:text-[22px]">Hi, Vansh here!</p>
+            <p className="mb-1 text-lg tracking-[0.14em] text-[#ACACAC] sm:text-xl">Hi! I’m Vansh.</p>
 
             <h1
               aria-label="Interaction Designer"
-              className="mx-auto mt-1 h-28 w-full max-w-[640px]"
+              className="mx-auto mt-1 h-28 w-full max-w-[640px] -translate-y-2"
             >
               <TechText
                 text="Interaction Designer"
-                fontFamily="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif"
+                fontStyle="italic"
                 fontWeight={500}
                 fontSize={64}
-                letterSpacing={-0.07}
+                letterSpacing={-0.04}
                 align="center"
                 color="#8FADFF"
                 accentColor="#8FADFF"
@@ -171,11 +171,11 @@ export default function Page() {
               />
             </h1>
 
-            <p className="hero-description mt-5 text-[clamp(0.875rem,1.45vw,1.25rem)] leading-tight text-[#b5b5b5]">
-              Finding elegance in complexity, and clarity in every interaction.
+            <p className="hero-description -mt-2 -translate-y-2 font-display italic tracking-[0.02em] text-[clamp(1.5rem,2.7vw,2rem)] leading-tight text-[#f0f0f0]">
+              Finding elegance in complexity and clarity in every interaction.
             </p>
 
-            <p className="mt-8 font-mono text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">
+            <p className="mt-8 font-mono text-xs uppercase tracking-[0.32em] text-[#6f6f6f]">
               Ahmedabad, India
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function Page() {
               <div className="px-6 py-12 sm:px-10 lg:sticky lg:top-28 lg:h-fit lg:px-8 lg:py-16">
                 <h2
                   id="work-heading"
-                  className="whitespace-nowrap font-display text-[clamp(2.25rem,3.4vw,2.7rem)] tracking-[-0.07em] text-[#d6d6d6]"
+                  className="whitespace-nowrap font-display text-[clamp(2.25rem,3.4vw,2.7rem)] tracking-[-0.04em] text-[#d6d6d6]"
                 >
                   My Best Works
                 </h2>
@@ -274,8 +274,8 @@ export default function Page() {
         <section id="side-quests" className="border-y border-white/10 bg-[#101010]">
           <div className="mx-auto max-w-[1440px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <div className="mb-14 text-center">
-              <h2 className="font-display text-5xl tracking-[-0.07em] text-[#d6d6d6] sm:text-6xl">
-                Side Quests
+              <h2 className="font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-6xl">
+                Side quests
               </h2>
 
               <p className="mt-4 text-sm text-[#777777]">
@@ -302,7 +302,7 @@ export default function Page() {
         <section id="soras-playground" className="border-b border-white/10 bg-[#070707]">
           <div className="mx-auto max-w-[1440px] px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <div className="mb-14 text-center">
-              <h2 className="font-display text-5xl tracking-[-0.07em] text-[#d6d6d6] sm:text-6xl">
+              <h2 className="font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-6xl">
                 Sora&apos;s Playground
               </h2>
             </div>
@@ -321,7 +321,7 @@ export default function Page() {
                   A little about me
                 </span>
 
-                <h2 className="mt-5 font-display text-5xl tracking-[-0.07em] text-[#d6d6d6] sm:text-6xl">
+                <h2 className="mt-5 font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-6xl">
                   About Me.
                 </h2>
 
@@ -357,7 +357,7 @@ export default function Page() {
 
         <footer id="contact" className="mx-auto max-w-[1440px] px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
           <div className="border-b border-white/10 pb-16 text-center sm:pb-20">
-            <h2 className="font-display text-5xl tracking-[-0.07em] text-[#d6d6d6] sm:text-7xl">
+            <h2 className="font-display text-5xl tracking-[-0.04em] text-[#d6d6d6] sm:text-7xl">
               Contact
             </h2>
 

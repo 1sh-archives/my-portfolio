@@ -1,7 +1,21 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
 import TargetCursor from '@/components/TargetCursor'
 import './globals.css'
+
+const playfairDisplay = localFont({
+  src: './fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf',
+  variable: '--font-playfair-display',
+  weight: '400 900',
+  style: 'italic',
+})
+
+const dmSans = localFont({
+  src: './fonts/DMSans_24pt-Light.ttf',
+  variable: '--font-dm-sans',
+  weight: '300',
+})
 
 export const metadata: Metadata = {
   title: 'Portfolio - Vansh Singh',
@@ -29,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfairDisplay.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         <TargetCursor
           targetSelector="a[href], button:not(:disabled), [role='button']:not([aria-disabled='true']), .cursor-target"

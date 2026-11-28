@@ -33,6 +33,7 @@ const noise = (...values: number[]) => {
 export interface TechTextProps {
   text?: string
   fontFamily?: string
+  fontStyle?: 'normal' | 'italic'
   fontWeight?: number
   fontSize?: number
   letterSpacing?: number
@@ -62,6 +63,7 @@ export interface TechTextProps {
 export default function TechText({
   text = 'React Bits',
   fontFamily = '',
+  fontStyle = 'normal',
   fontWeight = 600,
   fontSize = 150,
   letterSpacing = -0.05,
@@ -96,6 +98,7 @@ export default function TechText({
     settingsRef.current = {
       text,
       fontFamily,
+      fontStyle,
       fontWeight,
       fontSize,
       letterSpacing,
@@ -216,7 +219,8 @@ export default function TechText({
 
     const family = (s: Required<TechTextProps>) =>
       s.fontFamily || getComputedStyle(container).fontFamily || 'sans-serif'
-    const fontFor = (s: Required<TechTextProps>, size: number) => `${s.fontWeight} ${size}px ${family(s)}`
+    const fontFor = (s: Required<TechTextProps>, size: number) =>
+      `${s.fontStyle} ${s.fontWeight} ${size}px ${family(s)}`
 
     const palette = (s: Required<TechTextProps>) => {
       const current = getComputedStyle(container).color || '#000000'

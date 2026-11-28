@@ -44,7 +44,7 @@ function SideQuestDetailsBody({
           </p>
           <h3
             id="side-quest-modal-title"
-            className="mt-1 font-display text-2xl tracking-[-0.05em] text-[#f4f4f4] sm:text-3xl"
+            className="mt-1 font-display text-2xl tracking-[-0.02em] text-[#f4f4f4] sm:text-3xl"
           >
             {quest.title}
           </h3>
@@ -78,7 +78,7 @@ function SideQuestDetailsBody({
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#777777]">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-[#777777]">
               Overview
             </h4>
             <p className="mt-3 text-base leading-relaxed text-[#b5b5b5]">
@@ -87,7 +87,7 @@ function SideQuestDetailsBody({
           </div>
 
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#777777]">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-[#777777]">
               Exploration Notes
             </h4>
             <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[#999999]">
@@ -103,7 +103,7 @@ function SideQuestDetailsBody({
 
         {/* Process & gallery items */}
         <div className="space-y-6 border-t border-white/10 pt-7">
-          <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#777777]">
+          <h4 className="text-xs uppercase tracking-[0.2em] text-[#777777]">
             Process &amp; Frames
           </h4>
 
