@@ -241,7 +241,7 @@ export default function SideQuestCard({
     >
       <span ref={shadowRef} className="flip-card__shadow" aria-hidden="true" />
       <div ref={rotorRef} className="flip-card__rotor">
-        <div className="flip-card__face flex items-center justify-center border border-white/10 bg-[#181818] transition-colors duration-300 group-hover/btn:border-[#00a8ff]/50 group-focus-visible/btn:border-[#00a8ff]">
+        <div className="flip-card__face flex items-center justify-center border border-white/10 bg-[#181818] transition-colors duration-300 group-hover/btn:border-[#8FADFF]/50 group-focus-visible/btn:border-[#8FADFF]">
           {quest.image ? (
             <img
               src={quest.image}

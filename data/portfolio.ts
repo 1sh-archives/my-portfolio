@@ -36,7 +36,7 @@ export const projects: ProjectItem[] = [
     type: 'Web experience',
     description:
       'A VR simulation of Sponge Divers set up in 1926, Florida.\nThe player goes through 4 stages of the journey of a sponge diver, from boarding the boat on the docks, to reaching the diving point, descending onto seabed and collection sponges',
-    color: 'bg-[#ff6b22]',
+    color: 'bg-[#8FADFF]',
     image: '/9749d238-replacement-image-1.png',
   },
   {
@@ -46,7 +46,7 @@ export const projects: ProjectItem[] = [
     type: 'Spatial interaction',
     description:
       "Designed a 24/7 self-service printing kiosk. It supports multiple paper sizes (A5 to A2), four paper types, real-time print previews, and QR-based file upload, making the entire process faster, clearer, and fully in the student's hands.",
-    color: 'bg-[#00a8ff]',
+    color: 'bg-[#8FADFF]',
     image: '/9749d238-replacement-image-2.png',
   },
   {

@@ -39,7 +39,7 @@ function SideQuestDetailsBody({
       {/* Sticky modal header */}
       <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 px-6 py-5 backdrop-blur-sm sm:px-8">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00a8ff]">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#8FADFF]">
             Side Quest {quest.number} · {quest.tag}
           </p>
           <h3
@@ -54,7 +54,7 @@ function SideQuestDetailsBody({
           type="button"
           onClick={onClose}
           aria-label="Close pop-up"
-          className="flex size-10 shrink-0 items-center justify-center border border-white/15 bg-[#141414] text-[#b5b5b5] transition-colors hover:border-[#00a8ff]/60 hover:text-white focus-visible:border-[#00a8ff] focus-visible:outline-none"
+          className="flex size-10 shrink-0 items-center justify-center border border-white/15 bg-[#141414] text-[#b5b5b5] transition-colors hover:border-[#8FADFF]/60 hover:text-white focus-visible:border-[#8FADFF] focus-visible:outline-none"
         >
           <X className="size-4" />
         </button>
@@ -93,7 +93,7 @@ function SideQuestDetailsBody({
             <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[#999999]">
               {quest.notes.map((note, index) => (
                 <li key={index} className="flex gap-2.5">
-                  <span className="text-[#00a8ff]">—</span>
+                  <span className="text-[#8FADFF]">—</span>
                   <span>{note}</span>
                 </li>
               ))}
