@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import AeroShards from '@/components/AeroShards'
+import CursorGrid from '@/components/CursorGrid'
 import TechText from '@/components/TechText'
 import SideQuestCard from '@/components/SideQuestCard'
 import SideQuestModal from '@/components/SideQuestModal'
@@ -76,7 +78,7 @@ export default function Page() {
     <>
       <LandingPreloader onExitStart={handlePreloaderExitStart} />
       <main className="min-h-screen bg-[#070707] text-[#e9e9e9]">
-        <header className="sticky top-0 z-40 mx-auto flex max-w-[1440px] items-center px-6 py-6 sm:px-10 lg:px-16">
+        <header className="sticky top-0 z-40 mx-auto flex max-w-[1160px] items-center px-6 py-6 sm:px-10 lg:px-0">
           <nav
             className={`nav-shell hidden w-full items-center justify-between text-sm text-[#a2a2a2] md:flex ${navScrolled ? 'nav-shell-scrolled' : ''}`}
             aria-label="Main navigation"
@@ -106,51 +108,76 @@ export default function Page() {
           )}
         </header>
 
-        <section id="top" className="mx-auto max-w-[1440px] px-6 pb-20 pt-16 sm:px-10 sm:pt-24 lg:px-16 lg:pb-48 lg:pt-32">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <div className={`${preloaderRevealing ? 'landing-preloader-reveal' : ''} max-w-2xl lg:ml-[10%]`}>
-              <p className="hero-greeting mb-7 text-[48px] text-[#b5b5b5]">Hi, Vansh here!</p>
+        <section
+          id="top"
+          className="relative isolate z-0 mx-auto flex min-h-[calc(100svh-4.25rem)] max-w-[1440px] flex-col items-center justify-center px-6 pb-12 pt-6 text-center sm:px-10 lg:px-16"
+        >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-[84px] bottom-0 left-1/2 z-0 w-screen -translate-x-1/2"
+          >
+            <AeroShards
+              shardColor="#8FADFF"
+              accentColor="#8FADFF"
+              placement="right"
+              material="glass"
+              markers="plus"
+              count={700}
+              shardSize={0.7}
+              depthOfField={0.9}
+              glow={0.2}
+              vignette={0.4}
+              mouseInteraction
+              pulseOnClick
+              holdToGather
+              spread={1.2}
+              speed={0.5}
+              dpr={1.5}
+              onError={(error: Error) => console.error('AeroShards failed to initialize:', error)}
+            />
+          </div>
 
-              <h1 className="mt-7 max-w-xl font-display text-[48px] font-medium leading-[0.9] tracking-[-0.07em]">
-                Interaction &amp; Digital Experience
-              </h1>
+          <div className={`${preloaderRevealing ? 'landing-preloader-reveal' : ''} relative z-10 mb-10 sm:mb-12`}>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1sh%20%E2%80%93%20merged%20vector-WWjdXu0ZxUwdu5PZDofBljvf9UGPK7.png"
+              alt="Dark, stylized 1sh monogram"
+              className="aspect-[1500/1690] w-[min(72vw,300px)] object-contain"
+            />
+          </div>
 
-              <div className="mt-1 h-[106px] w-full max-w-[640px]">
-                <TechText
-                  text="Designer."
-                  fontFamily="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif"
-                  fontWeight={500}
-                  fontSize={96}
-                  letterSpacing={-0.07}
-                  align="left"
-                  color="#8FADFF"
-                  accentColor="#8FADFF"
-                  reveal="letter"
-                  dashLength={4}
-                  dashGap={2}
-                  specks={15}
-                  intro="none"
-                  clickKick
-                  guides={false}
-                />
-              </div>
+          <div className={`${preloaderRevealing ? 'landing-preloader-reveal' : ''} relative z-10`}>
+            <p className="mb-1 font-display text-xl text-[#f0f0f0] sm:text-[22px]">Hi, Vansh here!</p>
 
-              <p className="hero-description mt-4 max-w-lg text-lg leading-snug text-[#b5b5b5]">
-                Finding elegance in complexity, and clarity in every interaction.
-              </p>
-
-              <p className="mt-10 font-mono text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">
-                Ahmedabad, India · Available for REMOTE work
-              </p>
-            </div>
-
-            <div className={`${preloaderRevealing ? 'landing-preloader-reveal' : ''} flex justify-center lg:justify-end`}>
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1sh%20%E2%80%93%20merged%20vector-WWjdXu0ZxUwdu5PZDofBljvf9UGPK7.png"
-                alt="Dark, stylized 1sh monogram"
-                className="aspect-[1500/1690] w-full max-w-[360px] object-contain lg:max-w-[420px]"
+            <h1
+              aria-label="Interaction Designer"
+              className="mx-auto mt-1 h-28 w-full max-w-[640px]"
+            >
+              <TechText
+                text="Interaction Designer"
+                fontFamily="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif"
+                fontWeight={500}
+                fontSize={64}
+                letterSpacing={-0.07}
+                align="center"
+                color="#8FADFF"
+                accentColor="#8FADFF"
+                reveal="letter"
+                dashLength={4}
+                dashGap={2}
+                specks={15}
+                intro="none"
+                clickKick
+                guides={false}
               />
-            </div>
+            </h1>
+
+            <p className="hero-description mt-5 text-[clamp(0.875rem,1.45vw,1.25rem)] leading-tight text-[#b5b5b5]">
+              Finding elegance in complexity, and clarity in every interaction.
+            </p>
+
+            <p className="mt-8 font-mono text-xs uppercase tracking-[0.14em] text-[#6f6f6f]">
+              Ahmedabad, India
+            </p>
           </div>
         </section>
 
@@ -201,28 +228,46 @@ export default function Page() {
               </div>
             </aside>
 
-            <div className="work-projects-grid flex flex-col gap-4 px-4 py-8 sm:gap-4 sm:px-6 sm:py-10 lg:gap-4 lg:px-12 lg:py-14">
-              {projects.map((item, index) => (
-                <article
-                  key={item.number}
-                  ref={(element) => {
-                    projectRefs.current[index] = element
-                  }}
-                  data-project-index={index}
-                >
-                  <Link
-                    href={`/work/${item.slug}`}
-                    aria-label={`Open ${item.title} project`}
-                    className="project-tile-link block focus-visible:outline-none"
+            <CursorGrid
+              className="work-projects-grid"
+              cellSize={12}
+              color="#ffffff"
+              gridColor="#ffffff"
+              highlight="area"
+              gridStyle="lines"
+              radius={140}
+              holdTime={400}
+              fadeDuration={800}
+              maxOpacity={0.25}
+              fillOpacity={0.02}
+              gridOpacity={0.035}
+              spotlight={0.15}
+              edgeFade={0.05}
+              clickPulse
+            >
+              <div className="flex flex-col gap-4 px-4 py-8 sm:gap-4 sm:px-6 sm:py-10 lg:gap-4 lg:px-12 lg:py-14">
+                {projects.map((item, index) => (
+                  <article
+                    key={item.number}
+                    ref={(element) => {
+                      projectRefs.current[index] = element
+                    }}
+                    data-project-index={index}
                   >
-                    <div className="project-card relative aspect-[2.65/1] overflow-hidden">
-                      <img src={item.image} alt="" className="size-full object-contain opacity-100" />
-                    </div>
-                  </Link>
-                  <div className="pt-4" />
-                </article>
-              ))}
-            </div>
+                    <Link
+                      href={`/work/${item.slug}`}
+                      aria-label={`Open ${item.title} project`}
+                      className="project-tile-link block focus-visible:outline-none"
+                    >
+                      <div className="project-card relative aspect-[2.65/1] overflow-hidden">
+                        <img src={item.image} alt="" className="size-full object-contain opacity-100" />
+                      </div>
+                    </Link>
+                    <div className="pt-4" />
+                  </article>
+                ))}
+              </div>
+            </CursorGrid>
           </div>
         </section>
 
@@ -281,7 +326,7 @@ export default function Page() {
                 </h2>
 
                 <p className="mt-8 max-w-xl text-base leading-[1.9] text-[#999999]">
-                  Hey! I&apos;m Vansh, an interaction and digital experience designer
+                  Hey! I&apos;m Vansh, an interaction designer
                   passionate about creating meaningful digital experiences.
                 </p>
 
